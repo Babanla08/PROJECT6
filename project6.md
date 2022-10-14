@@ -6,9 +6,9 @@
 
 `lsblk`
 
-![Volume-Creation](./images/Creation-of-blocks.PNG)
+![Volume-Creation](./images1/Creation-of-blocks.PNG)
 
-![Volumes-added](./images/Volumes-added.PNG)
+![Volumes-added](./images1/Volumes-added.PNG)
 
 ###  Create a single partition on each of the 3 disks
 
@@ -18,7 +18,7 @@
 
 `sudo gdisk /dev/xvdh`
 
-![Partion-disc](./images/Partition-3Disks.PNG)
+![Partion-disc](./images1/Partition-3Disks.PNG)
 
 ### Install lvm2 package
 
@@ -26,9 +26,9 @@
 
 `sudo lvmdiskscan`
 
-![Lvm2-installation](./images/Lvm2-Installation.PNG)
+![Lvm2-installation](./images1/Lvm2-Installation.PNG)
 
-![Diskscan](./images/Diskscan.PNG)
+![Diskscan](./images1/Diskscan.PNG)
 
 ### Physical Volume Creation
 
@@ -38,13 +38,13 @@
 
 `sudo pvcreate /dev/xvdg1`
 
-![Physical-volume](./images/Physical-Volume.PNG)
+![Physical-volume](./images1/Physical-Volume.PNG)
 
 ### Creating Volume Group and Adding the 3 Physical Volume Into it
 
 `sudo vgcreate webdata-vg /dev/xvdh1 /dev/xvdg1 /dev/xvdf1`
 
-![Volume-group](./images/Volume-Group.PNG)
+![Volume-group](./images1/Volume-Group.PNG)
 
 ### Create 2 Logical Volume
 
@@ -52,7 +52,7 @@
 
 `sudo lvcreate -n logs-lv -L 14G webdata-vg`
 
-![Logical-Creation](./images/Logical-Volume.PNG)
+![Logical-Creation](./images1/Logical-Volume.PNG)
 
 ### Format the Logical Volumes With ext4 Filesystem
 
@@ -82,7 +82,7 @@
 
 `:!sudo blkid /dev/webdata-vg/logs-lv`
 
-![Updating-UUID](./images/Update-UUID.PNG)
+![Updating-UUID](./images1/Update-UUID.PNG)
 
 `code`
 `code`
